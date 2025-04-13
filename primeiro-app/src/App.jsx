@@ -1,11 +1,22 @@
+import './styles.css'
 function App () {
+
+    const estiloBotao = {
+      marginTop: 12, paddingTop: 8, paddingBottom: 8,
+      backgroundColor: 'blueviolet', color: 'white', border: 'none', width: '100%'
+    }
+
+    const textoDoRotulo = 'Nome:'
+
+    const obterTextoDoBotao = () => 'Enviar'
+
   return (
     <div style={{ margin: 'auto', width: 768, backgroundColor: '#EEE', padding: 12, borderRadius: 8 }}>
       <label
         htmlFor="nome"
-        style={{ display: 'block', marginBottom: 4 }}
-      >
-        Nome:
+        className='rotulo'
+        style={{ display: 'block', marginBottom: 4 }}>
+          {textoDoRotulo}
       </label>
 
       <input
@@ -15,12 +26,8 @@ function App () {
       />
 
       <button
-        style={{
-          marginTop: 12, paddingTop: 8, paddingBottom: 8,
-          backgroundColor: 'blueviolet', color: 'white', border: 'none', width: '100%'
-        }}
-      >
-        Enviar
+        style={estiloBotao}>
+          {obterTextoDoBotao()}
       </button>
     </div>
   )
