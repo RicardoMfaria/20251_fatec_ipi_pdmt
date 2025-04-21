@@ -1,5 +1,6 @@
 import React from "react"
 
+
 class App extends React.Component{
 
   constructor(props){
@@ -24,10 +25,8 @@ class App extends React.Component{
     //22/12
     const d3 = new Date(anoAtual, 11, 22)
     //21/03
-    const d4 = new Data(anoAtual, 2, 21)
-
+    const d4 = new Date(anoAtual, 2, 21)
     const estaNoSul = latitude < 0
-
     if (data >= d1 && data < d2)
       return estaNoSul ? 'Inverno' : 'Verão'
     if (data >= d2 && data < d3)
@@ -35,12 +34,11 @@ class App extends React.Component{
     if (data >= d3 || data < d4)
       return estaNoSul ? 'Verão' : 'Inverno'
     return estaNoSul ? 'Outono' : 'Primavera'
-
   }
 
   icones = {
     'Primavera' : 'seedling',
-    'Verão' : 'clouds-sun',
+    'Verão' : 'sun',
     'Outono' : 'tree',
     'Inverno' : 'snowflake'
   }
@@ -61,7 +59,10 @@ class App extends React.Component{
         })
       },
       (erro) => {
-
+        console.log(erro)
+        this.setState({
+          mensagemDeErro: 'Tente novamente mais tarde'
+        })
       }
     )
   }
@@ -75,11 +76,35 @@ class App extends React.Component{
           <div className="col-md-8">
             <div className="card">
               <div className="card-body">
+
                 <div 
                   className="d-flex align-items-center border rounded mb-2"
                   style={{height: '6rem'}}>
-                    <i className={`fa-solid fa-5x fa-${this.state.icone}`}></i>
+                    <i className={`fas fa-5x fa-${this.state.icone}`}></i>
+                    <p className="w-75 ms-3 text-center fs-1">{this.state.estacao}
+                    </p>
                 </div>
+
+                <div>
+                  <p className="text">
+                    {
+                      this.state.latitude ?
+                      `Coordenadas: ${this.state.latitude},${this.state.longitute}. Data: ${this.state.data}.`
+                      :
+                      this.state.mensagemDeErro ?
+                      `${this.state.mensagemDeErro}`
+                      :
+                        `Clique no botão para saber a sua estação climática`
+                    }
+                  </p>
+                </div>
+
+                <button 
+                  onClick={this.obterLocalizacao}
+                  className='btn btn-outline-primary w-100 mt-2'>
+                    Qual a minha estação ?
+                </button>
+
               </div>
             </div>
           </div>
