@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DataTable} from 'primereact/DataTable'
 import { Column } from "primereact/column";
 
-function LocalidadeLista () {
-    const localidades = [
-        {cep: '30130-010', logradouro: 'Avenida Amazonas', bairro: 'Centro', localidade: 'elo Horizonte', uf: 'MG'},
-        {cep: '04094-050', logradouro: 'Rua das Rosas', bairro: 'Mirandópolis', localidade: 'São Paulo', uf: 'SP'},
-        {cep: '13010-111', logradouro: 'Rua Barão de Jaguara', bairro: 'Centro', localidade: 'Campinas', uf: 'SP'}
-    ]
+function LocalidadeLista ({localidades}) {
+    const [renderKey, setRenderKey] = useState(0)
+
+    useEffect(()=>{
+        setRenderKey(prevKey => prevKey + 1)
+    }, [localidades])
 
     return(
         <div>
-            <h2>Exemplos de localidades</h2>
+            <h2>Localidades encontradas</h2>
             <DataTable value={localidades}>
             <Column field="cep" header="CEP"/>
             <Column field="logradouro" header="Logradouro"/>

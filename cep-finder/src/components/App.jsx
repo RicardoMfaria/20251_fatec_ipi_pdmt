@@ -9,7 +9,7 @@ function App() {
   const handleResultadoBusca = (data) => {
     console.log(data)
     if(!data.erro) {
-      setLocalidadesEncontradas([data])
+      setLocalidadesEncontradas(prevLocalidades => [data, ...prevLocalidades]);
     } else {
       alert('CEP não encontrado')
     }
@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <Busca onResultado={handleResultadoBusca}/>
-      <LocalidadeLista/>
+      <LocalidadeLista localidades={localidadesEncontradas}/>
     </div>
   )
 }
