@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Busca from './Busca';
-import ResultadoLista from './ResultadoLista'; // Vamos criar este componente
+import ResultadoLista from './ResultadoLista';
 import GraficoUF from './GraficoUF';
 
 function App() {
