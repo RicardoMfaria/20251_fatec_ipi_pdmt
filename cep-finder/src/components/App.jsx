@@ -1,4 +1,5 @@
 import React from 'react';
+import Busca from './Busca';
 
 function App() {
   return (
