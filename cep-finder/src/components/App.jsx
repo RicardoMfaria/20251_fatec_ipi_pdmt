@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Busca from './Busca';
 import ResultadoLista from './ResultadoLista'; // Vamos criar este componente
+import GraficoUF from './GraficoUF';
 
 function App() {
   const [localidadesEncontradas, setLocalidadesEncontradas] = useState([]);
@@ -15,7 +16,7 @@ function App() {
   };
 
   return (
-    <div className="flex"> 
+    <div className="flex" style={{ minHeight: '100vh' }}> 
       <div 
       style={{ 
         textAlign: 'center', 
@@ -35,7 +36,20 @@ function App() {
         
         <ResultadoLista localidades={localidadesEncontradas} />
       </div>
-      {/* Uma terceira div poderia ser adicionada aqui para outros elementos, se necessário */}
+      <div style={{
+          position: 'flex',
+          top: '10px',
+          right: '30px',
+          zIndex: 10,
+          backgroundColor: 'white', 
+          borderRadius: '8px',
+          padding: '10px',
+          width: '800px',
+          height: '500px', 
+          textAlign: 'center'}}>
+        <GraficoUF localidades={localidadesEncontradas} />
+      </div>
+      
     </div>
   );
 }

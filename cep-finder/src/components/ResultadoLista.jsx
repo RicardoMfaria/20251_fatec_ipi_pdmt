@@ -13,12 +13,13 @@ function ResultadoLista({ localidades }) {
             textAlign: 'center',
             borderRadius: '5px',
             backgroundColor: '#FFFFE0', 
-            padding: '5px', 
+            padding: '30px', 
             marginLeft: '20px', 
             marginTop: '10px', 
             borderColor: 'lightgray', 
             borderStyle: 'solid', 
-            borderWidth: '1px' 
+            borderWidth: '1px',
+            width: '800px' 
         }} 
         >
           <div>CEP: {localidade.cep}</div>

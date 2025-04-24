@@ -36,13 +36,14 @@ function Busca (props) {
         style={{
         textAlign: 'center', 
         backgroundColor: '#F8F8F8', 
-        width: '400px', 
-        marginTop: '10px',  
-        padding: '2px', 
+        width: '800px', 
+        marginTop: '30px',  
+        padding: '25px', 
         borderRadius: '10px', 
         borderColor: 'lightgray', 
         borderStyle: 'solid', 
-        borderWidth: '1px'
+        borderWidth: '1px',
+        height: '120px',
          }}> 
       <div className="p-field">
         <label htmlFor="cep">CEP</label>
@@ -51,14 +52,14 @@ function Busca (props) {
           type="text"
           value={cep}
           onChange={handleChange}
-          style={{ width: '100%' }} // O input ocupa a largura da div pai
+          style={{ width: '100%', marginTop: '10px', height: '30px' }}
         />
       </div>
       <Button 
         label="Buscar" 
         onClick={handleBuscar} 
         style={{ 
-            marginTop: '5px', 
+            marginTop: '10px', 
             width: '100%',
             backgroundColor: '#E8E8E8',
             border: '1px solid black' 
