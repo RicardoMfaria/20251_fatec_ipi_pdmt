@@ -15,11 +15,23 @@ function App() {
   };
 
   return (
-    <div className="flex"> {/* Container principal com layout flexível */}
-      <div style={{ width: '50%', paddingLeft: '20px' }}> {/* Área para o componente Busca */}
+    <div className="flex"> 
+      <div 
+      style={{ 
+        textAlign: 'center', 
+        width: '50%', 
+        paddingLeft: '25px' 
+        }}> 
         <Busca onResultado={handleResultadoBusca} />
       </div>
-      <div className="flex-grow" style={{ marginTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}> {/* Área para a lista de cards */}
+      <div 
+        className="flex-grow" 
+        style={{
+          textAlign: 'center', 
+          marginTop: '20px', 
+          paddingLeft: '20px', 
+          paddingRight: '20px' 
+        }}> 
         
         <ResultadoLista localidades={localidadesEncontradas} />
       </div>

@@ -31,7 +31,19 @@ function Busca (props) {
   };
 
   return (
-    <div className="flex flex-column" style={{ width: '100%' }}> {/* Layout vertical para input e botão */}
+    <div 
+        className="flex flex-column" 
+        style={{
+        textAlign: 'center', 
+        backgroundColor: '#F8F8F8', 
+        width: '400px', 
+        marginTop: '10px',  
+        padding: '2px', 
+        borderRadius: '10px', 
+        borderColor: 'lightgray', 
+        borderStyle: 'solid', 
+        borderWidth: '1px'
+         }}> 
       <div className="p-field">
         <label htmlFor="cep">CEP</label>
         <InputText
@@ -42,7 +54,16 @@ function Busca (props) {
           style={{ width: '100%' }} // O input ocupa a largura da div pai
         />
       </div>
-      <Button label="Buscar" onClick={handleBuscar} style={{ width: '100%' }} /> {/* O botão ocupa a largura da div pai */}
+      <Button 
+        label="Buscar" 
+        onClick={handleBuscar} 
+        style={{ 
+            marginTop: '5px', 
+            width: '100%',
+            backgroundColor: '#E8E8E8',
+            border: '1px solid black' 
+        }} /> 
+      
     </div>
   );
 }
