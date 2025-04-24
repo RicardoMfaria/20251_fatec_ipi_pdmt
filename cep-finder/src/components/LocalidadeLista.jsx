@@ -4,9 +4,9 @@ import { Column } from "primereact/column";
 
 function LocalidadeLista () {
     const localidades = [
-        {cep: '01001-000', logradouro: 'Praça da Sé', bairro: 'Sé', localidade: 'São Paulo', uf: 'SP'}
-        {cep: '01001-000', logradouro: 'Praça da Sé', bairro: 'Sé', localidade: 'São Paulo', uf: 'SP'}
-        {cep: '01001-000', logradouro: 'Praça da Sé', bairro: 'Sé', localidade: 'São Paulo', uf: 'SP'}
+        {cep: '30130-010', logradouro: 'Avenida Amazonas', bairro: 'Centro', localidade: 'elo Horizonte', uf: 'MG'},
+        {cep: '04094-050', logradouro: 'Rua das Rosas', bairro: 'Mirandópolis', localidade: 'São Paulo', uf: 'SP'},
+        {cep: '13010-111', logradouro: 'Rua Barão de Jaguara', bairro: 'Centro', localidade: 'Campinas', uf: 'SP'}
     ]
 
     return(
