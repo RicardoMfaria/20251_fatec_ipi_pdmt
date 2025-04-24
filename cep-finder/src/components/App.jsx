@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React from 'react'
+import Busca from './Busca'
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <div>
       <h1>Hello, P1</h1>
+      <Busca/>
     </div>
   )
 }
